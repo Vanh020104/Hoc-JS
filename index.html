@@ -5,9 +5,447 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="/feed/feed.js"></script>
+
+    <link rel="stylesheet" href="/feed/feedback.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+<style>
+    *{
+    box-sizing: border-box;
+  }
+  body {
+    margin: 50px;
+  }
+  .header {
+    text-align: center;
+  }
+  .tieude {
+    color: rgb(230, 140, 23);
+    text-align: center;
+    margin-top: 40px;
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+  .inmenu {
+    max-width: 1500px;
+    margin: 0 auto;
+  
+  }
+  .menu {
+    justify-items: center;
+    background-color: rgb(247, 247, 247);
+    margin-bottom: 5px;
+  }
+  .mainmenu {
+   display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .mainmenu li a {
+    color: black;
+    display: inline;
+    padding: 15px 15px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    transition: 0.4s;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:black;
+   margin-left: 33px;
+    text-align: center;
+  }
+  .mainmenu li {
+    float:left;
+    
+  }
+  
+  
+  
+  li a {
+    font-size: 20px;
+  }
+  .menu li a:hover {
+    background-color: rgb(234, 162, 68);
+  }
+  .image {
+    width:100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  
+  }
+  
+ /* footer */
+ footer {
+  background-color: rgb(247, 247, 247);
+  border: 0.2px solid rgb(206, 191, 191);
+  margin-top: 20px;
+  border-radius: 8px;
+}
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.ft {
+  float: left;
+  padding: 10px;
+}
+.ft.dstha {
+  width: 30%;
+}
+.ft.contact {
+  width: 35%;
+}
+.ft.follow {
+  margin-top: 60px;
+  width: 35%;
+}
+@media screen and (max-width: 600px) {
+  .ft.contact, .ft.follow, .ft.follow {
+    width: 100%;
+  }
+}
+.ft.dstha {
+  position: relative;
+  display: inline-block;
+}
+
+.thaxuong-content {
+  display: contents;
+  position: absolute;
+  background-color: rgb(190, 187, 187);
+  min-width: 160px;
+  z-index: 1;
+}
+.thaxuong-content a {
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+}
+.thaxuong-content a:hover {
+  background-color: rgb(234, 162, 68);
+}
+.ft.dstha:hover .thaxuong {
+  background-color: rgb(234, 162, 68);
+}
+.ft.contact a {
+text-decoration: none;
+color: black;
+font-size: 20px; 
+}
+.ft.contact li {
+margin-left: 30px;
+}
+.ft.contact {
+  margin-top: 40px;
+padding: 20px;
+}
+
+.mxh {
+margin-left: 140px;
+}
+.mxh a i {
+width: 50px;
+font-size: 30px;
+color: rgb(29, 10, 238);
+}
+.mxh a i:hover {
+color: rgb(245, 149, 24);
+}
+.menuphu {
+list-style: none;
+} 
+.menuphu li {
+margin: 20px;
+font-size: 20px;
+}
+.menuphu li a:hover {
+color: rgb(245, 149, 24);
+}
+
+
+  .gocphai {
+    float: right;
+    margin-right: 10px;
+    margin-top: 170px;
+  }
+  .container h1 {
+    text-align: center;
+  }
+
+  /*feed back */
+
+  .error {
+    color: red;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+
+  .info-form {
+    border: 1px solid black;
+    width: 40%;
+    padding: 30px 50px;
+    border-radius: 4px;
+    margin: 50px 30%;
+  }
+
+
+  .info-form label {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .container__list--information {
+    width: 100%;
+    height: 45px;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-top: 5px;
+    font-size: 16px;
+    padding: 0 20px;
+    margin-bottom: 5px;
+  }
+
+  .info-form div {
+    margin: 40px 0;
+  }
+
+  .feedback {
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-top: 5px;
+  }
+
+  .check_information {
+    border-color: rgb(245, 149, 24);
+    background-color: rgb(245, 149, 24);
+    color: black;
+    font-weight: 600;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 28%;
+  }
+
+  .check_information:hover {
+    background-color: rgb(255, 162, 41);
+    color: rgb(237, 237, 237);
+  }
+  h3 {
+    text-align: center;
+    font-size: 25px;
+  }
+</style>
 <body>
-    <h1>Java</h1>
+    <div class="header">
+        <h1 class="tieude">NOBEL PRIZE AND WINNERS</h1>
+    </div>
+     <div class="menu">
+        <nav class="inmenu">
+           <ul class="mainmenu">
+                <li><a href="/home/home.html">Home</a></li>
+                <li><a href="/afetnobel/nobel.html">Alfred Nobel</a></li>
+                <li><a href="/vatli/physics.html">Physics Prize</a></li>
+                <li><a href="#">Chemistry Prize</a></li>
+                <li><a href="#">Literary Prize</a></li>
+                <li><a href="/yhoc/medicine.html">Medicine Prize</a></li>
+                <li><a href="#">Peace Prize</a></li>
+                <li><a href="#">Prize in Economic Sciences</a></li>
+
+            </ul>
+        </nav>
+    </div>
+
+        <hr>
+
+
+<!--Feedback-->
+
+    
+<form class="info-form" id="info-form">
+    <h3>FEED BACK</h3>
+    <div>
+<!-- name -->
+        <label for="">User Name:</label><br>
+      <input class="container__list--information" type="text" id="name" name="name" placeholder="UserName...">
+      <span class="error" id="name-error"></span>
+    </div>
+    
+    
+    <div>
+    <!-- email -->
+    <label for="">Email:</label><br>
+      <input class="container__list--information" type="email" id="email" name="email" placeholder="Your Email...">        
+      <span class="error" id="email-error"></span>
+    </div>
+
+    <div>
+     <!-- phone number -->
+     <label for="">Phone Number:</label><br>
+      <input class="container__list--information" type="number" id="phone" name="phone" placeholder="Phone Number...">
+      <span class="error" id="phone-error"></span>
+    </div>
+
+    <div>
+        <!-- feedback -->
+        <label for="">Feedback</label>
+        <br>
+        <textarea id="feedback" name="feedback" class="feedback" rows="4" cols="50"></textarea>	
+        <span class="error" id="feedback-error"></span>
+    </div>
+
+    <button type="submit" class="check_information">Submit</button>
+    
+    
+</form>
+
+
+     <!-- phan display -->
+<div id="info-display"></div>
+
+
+
+   
+<footer>
+        
+  <div class="container"> 
+    <div class="ft dstha">
+       <div class="thaxuong-content">
+        <a href="/home/home.html">Home</a>
+        <a href="/afetnobel/nobel.html">Alfred Nobel</a>
+        <a href="/vatli/physics.html">Physics Prize</a>
+        <a href="#">Chemistry Prize</a>
+        <a href="#">Literary Prize</a>
+        <a href="/y hoc/medicine.html">Medicine Prize</a>
+        <a href="#">Peace Prize</a>
+        <a href="#">Prize in Economic Sciences</a>
+       </div>
+
+
+
+    </div>
+    <div class="ft contact">
+      <h1 class="lienlac">Contact us</h1>
+      <ul class="menuphu">
+        <li>
+          
+          <span class="lienlac">FPT Tower, số 10 Phạm Văn Bạch, phường Dịch Vọng, quận Cầu Giấy, Hà Nội</span>
+        </li>
+        <li><a href="/feedback.html">Give feedback</a></li>
+      </ul>
+
+
+
+
+
+    </div>
+    <div class="ft follow">
+      <h1>Follow us</h1>
+      <nav class="mxh">
+          <a href="https://www.facebook.com/nobelprize/"><i class="fab fa-facebook-square"></i></a>
+          <a href="https://twitter.com/NobelPrize"><i class="fab fa-twitter-square"></i></a>
+          <a href="https://www.instagram.com/nobelprize_org/?hl=en"><i class="fab fa-instagram-square"></i></a>
+          <a href="https://www.youtube.com/thenobelprize"><i class="fab fa-youtube-square"></i></a>
+      </nav>
+    </div>
+
+
+
+
+
+
+
+
+
+
+        
+    <div>
+      <p class="gocphai">Copyright © Nobel Prize Outreach AB 2023</p>
+    </div>
+  </div>
+  
+</footer>
+         
 </body>
-<script src="./main.js"></script>
+
+
+<!-- js check feedback -->
+<script>
+    // phan lấy các class 
+    const infoForm = document.getElementById('info-form');
+const infoDisplay = document.getElementById('info-display');
+
+infoForm.addEventListener('submit', (event) => {
+event.preventDefault();
+
+const name = document.getElementById('name').value.trim();
+const email = document.getElementById('email').value.trim();
+const phone = document.getElementById('phone').value.trim();
+const feedback = document.getElementById('feedback').value.trim();
+
+
+let isValid = true;
+
+
+// phan check thông tin name
+if (!name) {
+document.getElementById('name-error').textContent = 'Please enter your user name...';
+isValid = false;
+} else {
+document.getElementById('name-error').textContent = '';
+}
+
+    // phan check email
+
+if (!email) {
+document.getElementById('email-error').textContent = 'Please enter your email...';
+isValid = false;
+} else {
+document.getElementById('email-error').textContent = '';
+}
+
+
+
+// phan check phone number
+if (!phone) {
+document.getElementById('phone-error').textContent = 'Please enter the phone number...';
+isValid = false;
+} else {
+document.getElementById('phone-error').textContent = '';
+}
+
+
+
+// phan check feedback
+if (!phone) {
+document.getElementById('feedback-error').textContent = 'Please enter the feedback...';
+isValid = false;
+} else {
+document.getElementById('feedback-error').textContent = '';
+}
+
+
+// phan display hiển thị
+if (isValid) {
+infoDisplay.innerHTML = `
+  <hr>
+  <h2>Display</h2>
+  <ul>
+    <li><strong>User Name: </strong> ${name}</li>
+    <li><strong>Email: </strong> ${email}</li>
+    <li><strong>Phone Number: </strong> ${phone}</li>
+    <li><strong>Feed Back: </strong> ${feedback}</li>
+  </ul>
+`;
+}
+
+});
+</script>
 </html>
